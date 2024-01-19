@@ -23,27 +23,28 @@ app.post("/auth/signup", (req, res) => {
     try {
         let data = fs.readFileSync(filePath, 'utf8');
         let jsonData = JSON.parse(data);
-        let id=jsonData.users.length+1;
-        body.id=id;
+        let id = jsonData.users.length + 1;
+        body.id = id;
         jsonData.users.push(body)
-      
+
         fs.writeFileSync(filePath, JSON.stringify(jsonData), 'utf8')
         return res.status(200).json(body)
     } catch (err) {
-        return res.status(500).json({message:"sever error",status:500})}
+        return res.status(500).json({ message: "sever error", status: 500 })
+    }
 })
 
 
-app.post("/auth/login",(req,res)=>{
+app.post("/auth/login", (req, res) => {
     let data = fs.readFileSync(filePath, 'utf8');
     let jsonData = JSON.parse(data);
-    let filtered=jsonData.users.find(item=>item.email==req.body.email);
+    let filtered = jsonData.users.find(item => item.email == req.body.email);
     console.log(filtered)
-    if(filtered){
-        if(filtered.password==req.body.password)
-          return res.status(200).json({message:"success",data:filtered});
+    if (filtered) {
+        if (filtered.password == req.body.password)
+            return res.status(200).json({ message: "success", data: filtered });
 
-         
+
 
     }
     // if(filtered.password==req.body.password){
@@ -51,7 +52,7 @@ app.post("/auth/login",(req,res)=>{
 
     // }
 
-    return   res.status(404).json({message:"Not found",statusCode:404})
+    return res.status(404).json({ message: "Not found", statusCode: 404 })
 
 
 

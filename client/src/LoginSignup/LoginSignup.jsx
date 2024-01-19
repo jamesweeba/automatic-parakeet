@@ -33,8 +33,6 @@ const LoginSignup = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
-        // Prepare data for API call
         const userData = {
             name: username,
             email: useremail,
@@ -54,10 +52,10 @@ const LoginSignup = () => {
 
             if (location.pathname == "/login") {
                 delete userData.name
-                response = await axios.post('http://localhost:4000/auth/login', userData);
+                response = await axios.post('http://pic-morper:4000/auth/login', userData);
 
             } else {
-                response = await axios.post('http://localhost:4000/auth/signup', userData);
+                response = await axios.post('http://pic-morper:4000/auth/signup', userData);
 
             }
             if (response.status = 200) {
@@ -65,7 +63,7 @@ const LoginSignup = () => {
                 // console.log(userData);
                 setSignUpSuccessful(true);
                 navigate('/success')
-                console.log("ccccccccccccccccccccccccccccccccc")
+                
                 // history.push("/success")
 
             }
