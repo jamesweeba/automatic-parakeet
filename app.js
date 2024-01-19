@@ -2,7 +2,7 @@
 const express = require("express");
 const app = express();
 const cors = require("cors")
-const port = 4000;
+const port = process.env.PORT|| 4000;
 const path = require("path");
 const fs = require('fs');
 const filePath = 'db.json'
