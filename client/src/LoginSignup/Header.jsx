@@ -5,10 +5,15 @@ import { Outlet,Link } from 'react-router-dom'; // If using React Router for nav
 
 const Header = () => {
     const projectDescription = "Transform and Morph Your Pictures with Pic Morpher";
+
+    const handleClick=()=>{
+      console.log("ccccccccccccccccccc")
+
+    }
   return (
     <header className='app-header'>
         <div  className='app-title'>
-        <h1>Pic Morphy</h1>
+        <h1>Pic Morpher</h1>
         <p className='project-description'>{projectDescription}</p>
         </div>
       <nav>
@@ -16,8 +21,16 @@ const Header = () => {
           <li>
             <Link to='/about'>About</Link>
           </li>
+          <li > 
+            <Link to='/signup' onClick={()=>handleClick()}>signup</Link>
+          </li>
+
+          <li > 
+            <Link to='/login'>Login</Link>
+          </li>
+
           <li >
-            <Link to='/signup'>Sign Up</Link>
+            <Link to='/home'>Home</Link>
           </li>
         </ul>
       </nav>

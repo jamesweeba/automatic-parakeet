@@ -7,56 +7,35 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import LoginSignup from './LoginSignup/LoginSignup';
  import Header from './LoginSignup/Header';
 import About from './LoginSignup/About';
+import LandingPage from'./LoginSignup/LandingPage';
+import ImageConverter from'./LoginSignup/TetToImage';
+import { useLocation} from 'react-router-dom';
+import './App.css';
 
 const App = () => {
+  let location=useLocation();
   return (
+
+    location.pathname=="/success" ?<div><ImageConverter/></div>:
     <>
         <Header/>
-        {/* <Router> */}
          <Routes> 
-        <Route path="/signup" element={<LoginSignup/>} />
+        <Route path="/signup"  element={<LoginSignup/>} />
+        <Route path="/login"  element={<LoginSignup/>} />
         <Route path="/about" element={<About/>} />
+        <Route path="/" element={<LandingPage/>} />
+        <Route path="/home" element={<LandingPage/>} />
+        </Routes> 
 
-
-          </Routes> 
-
-        {/* </Router> */}
 
     </>
 
-    // <Router>
-    //   <Routes>
-    //     <Route path="/" element="" />
-    //     <Route path="/about" element="" />
-    //     <Route path="/contact" element="" />
-    //   </Routes>
-    // </Router>
-    
    
   );
 };
 
-/*
- return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
-    </Router>
-*/
+
 export default App;
 
 
 
-// function App() {
-//   return (
-//     <div>
-//       <LoginSignup/>
-      
-//     </div>
-//   );
-// }
-
-// export default App;

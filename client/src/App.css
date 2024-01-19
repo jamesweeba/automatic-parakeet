@@ -1,0 +1,74 @@
+.App {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  .buttom {
+    width: 100%;
+    background: red;
+  
+  }
+  
+  .top {
+    width: 100%;
+    background: rgb(124, 154, 245);
+    /* height: 50vh; */
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  
+  }
+  
+  form>* {
+    margin-top: 10px;
+    width: 400px;
+  }
+  
+  button {
+    height: 38px
+  }
+  
+  .inner [type="text"] {
+    height: 30px;
+    width: 100%;
+  
+  }
+  
+  .inner [type="select"] {
+    height: 30px;
+  
+  }
+  
+  .buttom {
+    width: 100%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* height: 50vh; */
+  }
+  
+  .imageDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    width: auto;
+    
+  }
+  
+  .inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .dropdown {
+    height: 30px;
+    width: 100%;
+  }
