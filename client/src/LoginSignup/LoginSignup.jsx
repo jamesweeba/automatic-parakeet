@@ -52,10 +52,10 @@ const LoginSignup = () => {
 
             if (location.pathname == "/login") {
                 delete userData.name
-                response = await axios.post('http://pic-morper:4000/auth/login', userData);
+                response = await axios.post('https://pic-morper.onrender.com/auth/login', userData);
 
             } else {
-                response = await axios.post('http://pic-morper:4000/auth/signup', userData);
+                response = await axios.post('https://pic-morper.onrender.com/auth/signup', userData);
 
             }
             if (response.status = 200) {
