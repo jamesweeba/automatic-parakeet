@@ -4,7 +4,7 @@ import { Outlet,Link } from 'react-router-dom'; // If using React Router for nav
 // Assume you have a separate CSS file for header styling
 
 const Header = () => {
-    const projectDescription = "Transform and Morph Your Pictures with Pic Morpher";
+    const projectDescription = "Where Words Become Images!";
 
     const handleClick=()=>{
       console.log("ccccccccccccccccccc")

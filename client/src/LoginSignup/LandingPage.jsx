@@ -20,10 +20,10 @@ const LandingPage = () => {
     <div class="content_resize">
       <div class="mainbar">
         <div class="article">
-          <h2><span>About to</span> Company Name</h2>
+          <h2><span>About </span></h2>
           <div class="clr"></div>
-          <p><strong>Welcome to PicMoper - Where Words Become Images!</strong></p>
-          <p>At PicMoper, we believe in the power of visual expression. We've crafted an extraordinary app that transforms your words into captivating images, 
+          <p><strong>Welcome to PicMopher - Where Words Become Images!</strong></p>
+          <p>At PicMopher, we believe in the power of visual expression. We've crafted an extraordinary app that transforms your words into captivating images, 
             giving life to your thoughts and making your messages truly unforgettable.</p>
         </div>
         <div class="article">
@@ -40,7 +40,7 @@ const LandingPage = () => {
           <h2><span>why</span> Pic Morpher</h2>
           <div class="clr"></div>
           <p><strong>Infinite Creativity at Your Fingertips:</strong></p>
-          <p>Say goodbye to mundane text messages. With PicMoper, you're the artist, and the canvas is your imagination. Unleash your creativity and transform any text into a vibrant and eye-catching image</p>
+          <p>Say goodbye to mundane text messages. With PicMopher, you're the artist, and the canvas is your imagination. Unleash your creativity and transform any text into a vibrant and eye-catching image</p>
           <p><strong>Express Yourself Like Never Before</strong></p>
           <p>Whether it's a quote that inspires you, a personal mantra, or a simple greeting, PicMoper elevates your messages to a whole new level. Your words take on a visual form that resonates with emotion and impact.</p>
 
