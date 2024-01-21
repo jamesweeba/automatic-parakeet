@@ -11,6 +11,7 @@ const LoginSignup = () => {
     const [username, setUsername] = useState('');
     const [useremail, setEmail] = useState('');
     const [userpassword, setPassword] = useState('');
+    const [errorMessage, setErrorMessage] = useState('');
     const location = useLocation();
     const navigate = useNavigate();
     // const history = useHistory();
@@ -33,6 +34,23 @@ const LoginSignup = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+
+        if (!username.trim() && location.pathname !== '/login') {
+            console.log("Please enter your name")
+            setErrorMessage('Please enter your name.');
+            return;
+        }
+
+        if (!useremail.trim()) {
+            setErrorMessage('Please enter your email.');
+            return;
+        }
+
+        if (!userpassword.trim()) {
+            setErrorMessage('Please enter your password.');
+            return;
+        }
+        setErrorMessage('');
         const userData = {
             name: username,
             email: useremail,
@@ -44,32 +62,19 @@ const LoginSignup = () => {
         setPassword("");
 
         try {
-            // Make an HTTP call to your API
-            console.log(location.pathname);
-            console.log("xxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
-
             let response = "";
-
             if (location.pathname == "/login") {
                 delete userData.name
                 response = await axios.post('https://pic-morper.onrender.com/auth/login', userData);
-
             } else {
                 response = await axios.post('https://pic-morper.onrender.com/auth/signup', userData);
-
             }
             if (response.status = 200) {
-                console.log(response.data);
-                // console.log(userData);
                 setSignUpSuccessful(true);
                 navigate('/success')
-                
-                // history.push("/success")
-
             }
-            if(response.status == 404){
+            if (response.status == 404) {
                 navigate(location.pathname)
-
             }
 
 
@@ -90,12 +95,14 @@ const LoginSignup = () => {
         // <form onSubmit={handleSubmit}>
         <div className='container-back'>
             <form onSubmit={handleSubmit}>
-
                 <div className='container'>
                     <div className='header'>
                         <div className='text'>{action}</div>
                         <div className='underline'></div>
                     </div>
+
+                    {errorMessage && <div className="error-message">{errorMessage}</div>}
+
                     <div className='inputs'>
                         {location.pathname === "/login" ? <div></div> : <div className='input'>
                             <img src={name} width={"50px"} alt="name" />
@@ -117,6 +124,7 @@ const LoginSignup = () => {
                         <button type="submit" className='submit'>{location.pathname === "/login" ? "Login" : "Sign up"}</button>
 
                     </div>
+
 
                 </div>
             </form>
