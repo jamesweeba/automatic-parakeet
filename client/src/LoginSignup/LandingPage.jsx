@@ -1,6 +1,7 @@
 import React from 'react';
 import "../about.css"
 import imageTop from "../asset/img_top.jpg"
+import imageTo from "../asset/top_image.jpg"
 
 const LandingPage = () => {
   return (
@@ -12,7 +13,7 @@ const LandingPage = () => {
       <div class="clr"></div>
      
       <div class="clr"></div>
-      <div class="header_img"> <img src={imageTop} alt="" width="960" height="326" /></div>
+      <div class="header_img"> <img src={imageTo} alt="" width="960" height="326" /></div>
     </div>
   </div>
   <div class="clr"></div>
@@ -30,7 +31,7 @@ const LandingPage = () => {
           <h2><span>Our</span> Mission</h2>
           <div class="clr"></div>
           <p><strong>Turning Text into Art</strong></p>
-          <p>In a world saturated with text, we recognize the need for a fresh and creative approach o communication. PicMoper is not just an app; it's a revolution in expression. Our  mission is to empower you to go beyond words and turn your ideas into stunning visual masterpieces.</p>
+          <p>In a world saturated with text, we recognize the need for a fresh and creative approach o communication. PicMopher is not just an app; it's a revolution in expression. Our  mission is to empower you to go beyond words and turn your ideas into stunning visual masterpieces.</p>
           
 
         </div>
@@ -42,7 +43,7 @@ const LandingPage = () => {
           <p><strong>Infinite Creativity at Your Fingertips:</strong></p>
           <p>Say goodbye to mundane text messages. With PicMopher, you're the artist, and the canvas is your imagination. Unleash your creativity and transform any text into a vibrant and eye-catching image</p>
           <p><strong>Express Yourself Like Never Before</strong></p>
-          <p>Whether it's a quote that inspires you, a personal mantra, or a simple greeting, PicMoper elevates your messages to a whole new level. Your words take on a visual form that resonates with emotion and impact.</p>
+          <p>Whether it's a quote that inspires you, a personal mantra, or a simple greeting, PicMopher elevates your messages to a whole new level. Your words take on a visual form that resonates with emotion and impact.</p>
 
 
         </div>
