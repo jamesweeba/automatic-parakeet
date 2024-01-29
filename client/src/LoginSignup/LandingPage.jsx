@@ -1,6 +1,6 @@
 import React from 'react';
 import "../about.css"
-import imageTop from "../asset/img_top.jpg"
+
 import imageTo from "../asset/top_image.jpg"
 
 const LandingPage = () => {

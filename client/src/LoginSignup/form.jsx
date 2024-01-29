@@ -2,31 +2,39 @@
 import TextInput from './Input';
 import DropDown from "./size";
 import Button from "./button";
+import axios from "axios";
+// import Buttom from './buttom';
+
+// import data from "../data"
 
 function Form({ setImageDescription, imageDescription, setImageSize, setImageUrl, imageSize, setLoading, setError }) {
 
+
     async function handleSubmit(e) {
-        e.preventDefault()
-        setImageUrl("")
-        setError("")
-        // setImageDescription("")
+        e.preventDefault();
+
+        if (!imageDescription.trim()) {
+            setError("please provide image description")
+            return;
+
+        }
+
         setLoading(true)
+
         const requestOptions = {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ prompt: imageDescription, size: imageSize })
+            data: JSON.stringify({ prompt: imageDescription }),
+            url: 'https://pic-morper.onrender.com/generate-images'
         };
-        try {
-            let response = await fetch(`http://localhost:1700/api/v1/generate-images`, requestOptions);
-            let { data, error } = await response.json();
-            if (error) {
-                return setError(error)
-            }
-            // { console.log("lllllll", error) }
-            setImageUrl(data)
-        } catch (err) {
 
-            setError(err)
+        try {
+            let response = await axios(requestOptions);
+            let imagefin = response;
+            setImageUrl(imagefin.data.image);
+        } catch (err) {
+            console.log(err);
+            setError("daily limit reached");
         } finally {
             setLoading(false)
         }
@@ -38,6 +46,7 @@ function Form({ setImageDescription, imageDescription, setImageSize, setImageUrl
             <DropDown setImageSize={setImageSize} />
             <Button />
         </form>
+
 
     )
 
